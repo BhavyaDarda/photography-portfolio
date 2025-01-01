@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
-import useScrollAnimation from '../utils/useScrollAnimation';
+import useScrollAnimation from '../../utils/useScrollAnimation';
 
 export default function Home() {
   const galleryRef = useRef();
