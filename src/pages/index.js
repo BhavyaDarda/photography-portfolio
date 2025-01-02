@@ -10,18 +10,18 @@ export default function Home() {
   useScrollAnimation(galleryRef);
 
   const images = [
-    'image1.jpg',
-    'image2.jpg',
-    'image3.jpg',
-    'image4.jpg',
-    'image5.jpg',
+    { src: 'image1.jpg', alt: 'A cute golden retriever' },
+    { src: 'image2.jpg', alt: 'Forest pathway in autumn' },
+    { src: 'image3.jpg', alt: 'City skyline at night' },
+    { src: 'image4.jpg', alt: 'Desert dunes under the stars' },
+    { src: 'image5.jpg', alt: 'Ocean waves crashing on rocks' },
   ];
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <Head>
-        <title>Photography Portfolio</title>
-        <meta name="description" content="Explore my curated photography collection, showcasing my passion and expertise." />
+        <title>My Photography Portfolio</title>
+        <meta name="description" content="Explore a curated collection of my photography, capturing moments from around the world." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <header className="text-center py-8">
@@ -40,8 +40,8 @@ export default function Home() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Image
-                src={`../../public/images/${img}`}
-                alt={`Gallery image ${index + 1}`}
+                src={`/images/${img.src}`}
+                alt={img.alt}
                 layout="responsive"
                 width={600}
                 height={400}
