@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Image from '../../public/images';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import useScrollAnimation from '../../utils/useScrollAnimation';
@@ -9,6 +8,14 @@ export default function Home() {
   const galleryRef = useRef();
 
   useScrollAnimation(galleryRef);
+
+  const images = [
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
+    'image4.jpg',
+    'image5.jpg',
+  ];
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
@@ -23,7 +30,7 @@ export default function Home() {
       </header>
       <main className="container mx-auto px-4">
         <section ref={galleryRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg'].map((img, index) => (
+          {images.map((img, index) => (
             <motion.div
               key={index}
               className="overflow-hidden rounded-lg shadow-lg transform transition-transform hover:scale-105 bg-white"
@@ -33,7 +40,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Image
-                src={`../../public/images/image1.jpg${img}`}
+                src={`../../public/images/${img}`}
                 alt={`Gallery image ${index + 1}`}
                 layout="responsive"
                 width={600}
