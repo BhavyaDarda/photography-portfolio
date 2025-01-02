@@ -32,7 +32,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Image
-                src={`../../public/images/image1.jpg${img}`}
+                src={`../../public/images/image1.jpg/${img}`}
                 alt={`Gallery image ${index + 1}`}
                 layout="responsive"
                 width={600}
