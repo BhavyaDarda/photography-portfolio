@@ -10,11 +10,11 @@ export default function Home() {
   useScrollAnimation(galleryRef);
 
   const images = [
-    { src: 'image1.jpg', alt: 'A cute golden retriever' },
-    { src: 'image2.jpg', alt: 'Forest pathway in autumn' },
-    { src: 'image3.jpg', alt: 'City skyline at night' },
-    { src: 'image4.jpg', alt: 'Desert dunes under the stars' },
-    { src: 'image5.jpg', alt: 'Ocean waves crashing on rocks' },
+    { src: '/images/image1.jpg', alt: 'Sunset over the mountains' },
+    { src: '/images/image2.jpg', alt: 'Forest pathway in autumn' },
+    { src: '/images/image3.jpg', alt: 'City skyline at night' },
+    { src: '/images/image4.jpg', alt: 'Desert dunes under the stars' },
+    { src: '/images/image5.jpg', alt: 'Ocean waves crashing on rocks' },
   ];
 
   return (
@@ -40,7 +40,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Image
-                src={`/images/${img.src}`}
+                src={img.src}
                 alt={img.alt}
                 layout="responsive"
                 width={600}
